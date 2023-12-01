@@ -1,17 +1,16 @@
 import fs from "fs";
 
-function extractNumberFromWord(word: string): number {
-  const numbers = word.replaceAll(/[^0-9]/g, "");
+function extractDigitFromWord(word: string): number {
+  word = word.replaceAll(/[^0-9]/g, "");
 
-  return parseInt(numbers.charAt(0) + numbers.charAt(numbers.length - 1));
+  return parseInt(word.charAt(0) + word.charAt(word.length - 1));
 }
-function sumNumbersFromWords(words: string[]) {
-  return words.map(extractNumberFromWord).reduce((prev, cur) => prev + cur);
-}
-function main() {
-  const data = fs.readFileSync("./assets/1-1.txt", "utf-8");
-
-  return sumNumbersFromWords(data.split("\r\n"));
+function sumDigitsFromWords(words: string[]): number {
+  return words.map(extractDigitFromWord).reduce((prev, cur) => prev + cur);
 }
 
-export default main;
+export default () => {
+  const data = fs.readFileSync("./assets/1.txt", "utf-8");
+
+  return sumDigitsFromWords(data.split("\r\n"));
+};
