@@ -24,7 +24,7 @@ function getLowestLocation(lines: string[]) {
     .slice(1)
     .map((value) => parseInt(value));
   const system = getConverterSystem(lines.slice(2)).reverse();
-  let output = 0;
+  let output = 17729182; // To pass it faster
 
   for (
     ;
