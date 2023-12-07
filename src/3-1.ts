@@ -1,5 +1,3 @@
-import fs from "fs";
-
 function isDigit(map: string[], x: number, y: number) {
   if (!map[y]) return false;
   return !isNaN(parseInt(map[y].charAt(x)));
@@ -38,8 +36,4 @@ function sumNumbersAdjacentToSymbols(map: string[]) {
   }, 0);
 }
 
-export default () => {
-  const data = fs.readFileSync("./assets/3.txt", "utf-8");
-
-  return sumNumbersAdjacentToSymbols(data.split("\r\n"));
-};
+export default sumNumbersAdjacentToSymbols;

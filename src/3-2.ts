@@ -1,5 +1,3 @@
-import fs from "fs";
-
 function getGearsPositions(map: string[]) {
   return map
     .join()
@@ -35,8 +33,4 @@ function sumGearsRatios(map: string[]) {
   );
 }
 
-export default () => {
-  const data = fs.readFileSync("./assets/3.txt", "utf-8");
-
-  return sumGearsRatios(data.split("\r\n"));
-};
+export default sumGearsRatios;
