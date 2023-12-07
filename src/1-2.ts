@@ -1,5 +1,3 @@
-import fs from "fs";
-
 function replacePlainDigit(word: string): string {
   [
     "one",
@@ -25,8 +23,4 @@ function sumDigitsFromWords(words: string[]) {
   return words.map(extractDigitsFromWord).reduce((prev, cur) => prev + cur);
 }
 
-export default () => {
-  const data = fs.readFileSync("./assets/1.txt", "utf-8");
-
-  return sumDigitsFromWords(data.split("\r\n"));
-};
+export default sumDigitsFromWords;

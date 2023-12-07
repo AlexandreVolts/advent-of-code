@@ -1,5 +1,3 @@
-import fs from "fs";
-
 function getCardPoints(line: string) {
   const winning = line
     .slice(line.indexOf(":") + 1, line.indexOf("|"))
@@ -33,8 +31,4 @@ function sumCards(cards: string[]) {
     );
 }
 
-export default () => {
-  const data = fs.readFileSync("./assets/4.txt", "utf-8");
-
-  return sumCards(data.split("\r\n"));
-};
+export default sumCards;

@@ -1,4 +1,3 @@
-import fs from "fs";
 import { ConverterMap, getConverterSystem } from "./5-helpers";
 
 function convertSeed(seed: number, system: ConverterMap[]) {
@@ -20,8 +19,4 @@ function getLowestLocation(lines: string[]) {
   return Math.min(...seeds.map((seed) => convertSeed(seed, system)));
 }
 
-export default () => {
-  const data = fs.readFileSync("./assets/5.txt", "utf-8");
-
-  return getLowestLocation(data.split("\r\n"));
-};
+export default getLowestLocation;

@@ -1,5 +1,3 @@
-import fs from "fs";
-
 const LIMITS = {
   red: 12,
   green: 13,
@@ -25,8 +23,4 @@ function sumGamesId(lines: string[]) {
     return prev + index + 1;
   }, 0);
 }
-export default () => {
-  const data = fs.readFileSync("./assets/2.txt", "utf-8");
-
-  return sumGamesId(data.split("\r\n"));
-};
+export default sumGamesId;

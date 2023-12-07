@@ -1,11 +1,11 @@
-import fs from "fs";
-
 function parseRaces(lines: string[]): [number, number][] {
-  const values = lines.map((line) => line
-    .split(" ")
-    .slice(1)
-    .map((value) => parseInt(value))
-    .filter(Number));
+  const values = lines.map((line) =>
+    line
+      .split(" ")
+      .slice(1)
+      .map((value) => parseInt(value))
+      .filter(Number)
+  );
 
   return values[0].map((value, index) => [value, values[1][index]]);
 }
@@ -29,16 +29,7 @@ function getWinningCases(race: [number, number]) {
 }
 
 export default [
-  () => {
-    const data = fs.readFileSync("./assets/6.txt", "utf-8");
-    const races = parseRaces(data.split("\r\n"));
-
-    return races.reduce((prev, cur) => prev * getWinningCases(cur), 1);
-  },
-  () => {
-    const data = fs.readFileSync("./assets/6.txt", "utf-8");
-    const race = parseRace(data.split("\r\n"));
-
-    return getWinningCases(race);
-  },
+  (lines: string[]) =>
+    parseRaces(lines).reduce((prev, cur) => prev * getWinningCases(cur), 1),
+  (lines: string[]) => getWinningCases(parseRace(lines)),
 ];
