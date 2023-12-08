@@ -45,7 +45,6 @@ function sumHands(hands: string[]) {
   return hands
     .map((hand) => convertHand(hand, converter))
     .sort(compareHands)
-    .map((value) => {console.log(value, getStrength(value)); return (value)})
     .reduce(
       (prev, cur, index) => prev + parseInt(cur.slice(6)) * (index + 1),
       0
