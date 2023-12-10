@@ -16,6 +16,8 @@ import e7p2 from "./7-2.js";
 import e8p1 from "./8-1.js";
 import e8p2 from "./8-2.js";
 import e9 from "./9.js";
+import e10p1 from "./10-1.js";
+import e10p2 from "./10-2.js";
 
 [
   e1p1,
@@ -34,6 +36,8 @@ import e9 from "./9.js";
   e8p1,
   e8p2,
   ...e9,
+  e10p1,
+  e10p2,
 ].forEach((callback, index) => {
   const content = fs.readFileSync(`./assets/${~~(index / 2) + 1}.txt`, "utf-8");
   const lines = content.split("\r\n");
