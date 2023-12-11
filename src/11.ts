@@ -44,7 +44,7 @@ function getGalaxies(
   return output;
 }
 function getDistance(a: Vector2, b: Vector2) {
-  return Math.abs(a.x - b.x) - 1 + (Math.abs(a.y - b.y) - 1) + 2;
+  return Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
 }
 function sumDistances(lines: string[], ratio = 1) {
   const distortions = getEmptyLines(lines);
