@@ -16,12 +16,7 @@ function getArea(points: Vector2[]) {
   const clockwiseResult = points.reduce((prev, cur, index) => {
     const next = points[index + 1] ?? { x: 0, y: 0 };
 
-    return (
-      prev +
-      (cur.x * next.y -
-        cur.y * next.x) *
-        0.5
-    );
+    return prev + (cur.x * next.y - cur.y * next.x) * 0.5;
   }, 0);
   const edges = points.reduce((prev, _, index) => {
     return (
