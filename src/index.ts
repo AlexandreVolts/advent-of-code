@@ -19,6 +19,8 @@ import e9 from "./9.js";
 import e10p1 from "./10-1.js";
 import e11 from "./11.js";
 import e13p1 from "./13-1.js";
+import e18p1 from "./18-1.js";
+import e18p2 from "./18-2.js";
 
 [
   e1p1,
@@ -43,7 +45,9 @@ import e13p1 from "./13-1.js";
   () => {},
   () => {},
   e13p1,
-  ...Array.from({ length: 9 }).map(() => (() => {}))
+  ...Array.from({ length: 9 }).map(() => (() => {})),
+  e18p1,
+  e18p2,
 ].forEach((callback, index) => {
   if (!fs.existsSync(`./assets/${~~(index / 2) + 1}.txt`)) {
     console.log(
