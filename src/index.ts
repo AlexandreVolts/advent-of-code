@@ -18,6 +18,7 @@ import e8p2 from "./8-2.js";
 import e9 from "./9.js";
 import e10p1 from "./10-1.js";
 import e11 from "./11.js";
+import e13p1 from "./13-1.js";
 
 [
   e1p1,
@@ -39,7 +40,17 @@ import e11 from "./11.js";
   e10p1,
   () => {},
   ...e11,
+  () => {},
+  () => {},
+  e13p1,
+  ...Array.from({ length: 9 }).map(() => (() => {}))
 ].forEach((callback, index) => {
+  if (!fs.existsSync(`./assets/${~~(index / 2) + 1}.txt`)) {
+    console.log(
+      `${~~(index / 2) + 1}-${(index % 2) + 1} answer: undefined`
+    );
+    return;
+  }
   const content = fs.readFileSync(`./assets/${~~(index / 2) + 1}.txt`, "utf-8");
   const lines = content.split("\r\n");
 
