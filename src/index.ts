@@ -21,6 +21,7 @@ import e11 from "./11.js";
 import e13p1 from "./13-1.js";
 import e14p1 from "./14-1.js";
 import e15p1 from "./15-1.js";
+import e15p2 from "./15-2.js";
 import e18p1 from "./18-1.js";
 import e18p2 from "./18-2.js";
 import e19p1 from "./19-1.js";
@@ -54,7 +55,8 @@ import e21p1 from "./21-1.js";
   e14p1,
   () => {},
   e15p1,
-  ...Array.from({ length: 5 }).map(() => () => {}),
+  e15p2,
+  ...Array.from({ length: 4 }).map(() => () => {}),
   e18p1,
   e18p2,
   e19p1,
