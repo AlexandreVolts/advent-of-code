@@ -27,6 +27,7 @@ import e18p2 from "./18-2.js";
 import e19p1 from "./19-1.js";
 import e20p1 from "./20-1.js";
 import e21p1 from "./21-1.js";
+import e22p1 from "./22-1.js";
 
 [
   e1p1,
@@ -64,6 +65,8 @@ import e21p1 from "./21-1.js";
   e20p1,
   () => {},
   e21p1,
+  () => {},
+  e22p1,
 ].forEach((callback, index) => {
   if (!fs.existsSync(`./assets/${~~(index / 2) + 1}.txt`)) {
     console.log(`${~~(index / 2) + 1}-${(index % 2) + 1} answer: undefined`);
