@@ -22,15 +22,14 @@ import e13p1 from "./13-1.js";
 import e14p1 from "./14-1.js";
 import e15p1 from "./15-1.js";
 import e15p2 from "./15-2.js";
+import e16 from "./16.js";
 import e18p1 from "./18-1.js";
 import e18p2 from "./18-2.js";
 import e19p1 from "./19-1.js";
 import e20p1 from "./20-1.js";
 import e21p1 from "./21-1.js";
 import e22p1 from "./22-1.js";
-//import e22p2 from "./22-2.js";
 import e23p1 from "./23-1.js";
-//import e23p2 from "./23-2.js";
 import e24p1 from "./24-1.js";
 
 [
@@ -61,7 +60,9 @@ import e24p1 from "./24-1.js";
   () => {},
   e15p1,
   e15p2,
-  ...Array.from({ length: 4 }).map(() => () => {}),
+  ...e16,
+  () => {},
+  () => {},
   e18p1,
   e18p2,
   e19p1,
@@ -71,9 +72,9 @@ import e24p1 from "./24-1.js";
   e21p1,
   () => {},
   e22p1,
-  /*e22p2,*/() => {},
+  () => {},
   e23p1,
-  /*e23p2,*/() => {},
+  () => {},
   e24p1,
 ].forEach((callback, index) => {
   if (!fs.existsSync(`./assets/${~~(index / 2) + 1}.txt`)) {
