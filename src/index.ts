@@ -76,6 +76,9 @@ import e24p1 from "./24-1.js";
   e23p1,
   () => {},
   e24p1,
+  () => {},
+  () => {},
+  () => {},
 ].forEach((callback, index) => {
   if (!fs.existsSync(`./assets/${~~(index / 2) + 1}.txt`)) {
     console.log(`${~~(index / 2) + 1}-${(index % 2) + 1} answer: undefined`);
